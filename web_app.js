@@ -7,23 +7,19 @@ tg.MainButton.color = "#2cab37";
 let buttons = document.querySelectorAll('[id^="btn"]');
 const choice = [];
 
+buttons.forEach(button => {
   button.addEventListener("click", function() {
-    console.log("HUINA")
+    console.log("HUINA");
     if (tg.MainButton.isVisible) {
       tg.MainButton.hide();
     } else {
-      choice.push(button.id.slice(-1))
-      tg.MainButton.setText("Вы выбрали  " + choice.length + "позиций!");
+      choice.push(button.id.slice(-1));
+      tg.MainButton.setText("Вы выбрали  " + choice.length + " позиций!");
       item = button.id.slice(-1);
       tg.MainButton.show();
-
     }
   });
-
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    tg.sendData(choice);
 });
-
 
 
 let usercard = document.getElementById("usercard");
