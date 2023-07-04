@@ -1,25 +1,65 @@
- let tg = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp;
 
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
-let buttons = document.querySelectorAll('[id^="btn"]');
-const choice = [];
 
-buttons.forEach(button => {
-  button.addEventListener("click", function() {
-    console.log("HUINA");
+let items = [];
+
+let btn_amrcn = document.getElementById("btn_amrcn");
+let btn_esprss = document.getElementById("btn_esprss");
+let btn_dpp = document.getElementById("btn_dpp");
+let btn_ltt = document.getElementById("btn_ltt");
+
+btn_amrcn.addEvenLister("click", function() {
     if (tg.MainButton.isVisible) {
-      tg.MainButton.hide();
-    } else {
-      choice.push(button.id.slice(-1));
-      tg.MainButton.setText("Вы выбрали  " + choice.length + " позиций!");
-      item = button.id.slice(-1);
-      tg.MainButton.show();
+    tg.MainButton.hide();
     }
-  });
+    else {
+    items.push('amrcn');
+    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+
+    tg.MainButton.show
 });
+
+btn_esprss.addEvenLister("click", function() {
+    if (tg.MainButton.isVisible) {
+    tg.MainButton.hide();
+    }
+    else {
+    items.push('esprss');
+    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+
+    tg.MainButton.show
+});
+
+btn_dpp.addEvenLister("click", function() {
+    if (tg.MainButton.isVisible) {
+    tg.MainButton.hide();
+    }
+    else {
+    items.push('dpp');
+    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+
+    tg.MainButton.show
+});
+
+btn_ltt.addEvenLister("click", function() {
+    if (tg.MainButton.isVisible) {
+    tg.MainButton.hide();
+    }
+    else {
+    items.push('btn_ltt');
+    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+
+    tg.MainButton.show
+});
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+    tg.sendData(items);
+});
+
 
 
 let usercard = document.getElementById("usercard");
