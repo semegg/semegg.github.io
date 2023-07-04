@@ -5,7 +5,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-let items = [];
+let items = "";
 
 let btn_amrcn = document.getElementById("btn_amrcn");
 let btn_esprss = document.getElementById("btn_esprss");
@@ -17,8 +17,8 @@ btn_amrcn.addEvenLister("click", function() {
     tg.MainButton.hide();
     }
     else {
-    items.push('amrcn');
-    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+    items = "amrcn";
+    tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
     tg.MainButton.show
 });
@@ -28,9 +28,8 @@ btn_esprss.addEvenLister("click", function() {
     tg.MainButton.hide();
     }
     else {
-    items.push('esprss');
-    tg.Main.setText("Вы выбрали " items.length "товаров!")};
-
+    items = "amrcn";
+    tg.MainButton.setText("Вы выбрали " items "товаров!")};
     tg.MainButton.show
 });
 
@@ -39,8 +38,8 @@ btn_dpp.addEvenLister("click", function() {
     tg.MainButton.hide();
     }
     else {
-    items.push('dpp');
-    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+    items = "amrcn";
+    tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
     tg.MainButton.show
 });
@@ -50,8 +49,8 @@ btn_ltt.addEvenLister("click", function() {
     tg.MainButton.hide();
     }
     else {
-    items.push('btn_ltt');
-    tg.Main.setText("Вы выбрали " items.length "товаров!")};
+    items = "amrcn";
+    tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
     tg.MainButton.show
 });
