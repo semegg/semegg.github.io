@@ -3,7 +3,7 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
 
-let items = "";
+let items = [];
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
 buttons.forEach(button => {
@@ -11,8 +11,10 @@ buttons.forEach(button => {
     if (tg.MainButton.isVisible) {
       tg.MainButton.hide();
     } else {
-      items = button.id.slice(4); // Получаем значение после "btn_" в id кнопки
-      tg.MainButton.setText(items);
+      const buttonId = button.id.slice(4);
+      items.push(buttonId);
+      const count = items.length;
+      tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
       tg.MainButton.show();
     }
   });
