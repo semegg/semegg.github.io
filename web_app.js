@@ -20,7 +20,7 @@ btn_amrcn.addEvenLister("click", function() {
     items = "amrcn";
     tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
-    tg.MainButton.show;
+    tg.MainButton.show;}
 });
 
 btn_esprss.addEvenLister("click", function() {
@@ -30,7 +30,7 @@ btn_esprss.addEvenLister("click", function() {
     else {
     items = "amrcn";
     tg.MainButton.setText("Вы выбрали " items "товаров!")};
-    tg.MainButton.show;
+    tg.MainButton.show();}
 });
 
 btn_dpp.addEvenLister("click", function() {
@@ -41,7 +41,7 @@ btn_dpp.addEvenLister("click", function() {
     items = "amrcn";
     tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
-    tg.MainButton.show;
+    tg.MainButton.show();}
 });
 
 btn_ltt.addEvenLister("click", function() {
@@ -52,7 +52,7 @@ btn_ltt.addEvenLister("click", function() {
     items = "amrcn";
     tg.MainButton.setText("Вы выбрали " items "товаров!")};
 
-    tg.MainButton.show;
+    tg.MainButton.show();}
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
