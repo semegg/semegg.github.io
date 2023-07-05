@@ -12,7 +12,7 @@ buttons.forEach(button => {
       tg.MainButton.hide();
     } else {
       items = button.id.slice(4); // Получаем значение после "btn_" в id кнопки
-      tg.MainButton.setText("Вы выбрали товаров!");
+      tg.MainButton.setText(items);
       tg.MainButton.show();
     }
   });
