@@ -6,15 +6,14 @@ tg.MainButton.color = "#2cab37";
 let items = [];
 
 // Восстановление значения items при загрузке страницы
-
 const savedItems = localStorage.getItem("items");
 if (savedItems) {
-items = JSON.parse(savedItems);
-if (window.location.pathname === "/index.html"){
-tg.MainButton.setText("Continue")}
-tg.MainButton.show();
+  items = JSON.parse(savedItems);
+  if (window.location.pathname === "/index.html") {
+    tg.MainButton.setText("Continue");
+  }
+  tg.MainButton.show();
 }
-
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
 buttons.forEach(button => {
@@ -25,6 +24,10 @@ buttons.forEach(button => {
     tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
     tg.MainButton.show();
   });
+});
+
+window.addEventListener("beforeunload", function() {
+  localStorage.removeItem("items");
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
