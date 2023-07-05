@@ -12,7 +12,13 @@ if (savedItems) {
   if (window.location.pathname === "/index.html") {
     tg.MainButton.setText("Continue");
   }
+  else {
+      const count = items.length;
+    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+    tg.MainButton.show();
+  }
   tg.MainButton.show();
+
 }
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
