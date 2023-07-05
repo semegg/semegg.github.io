@@ -7,10 +7,11 @@ let items = [];
 
 // Восстановление значения items при загрузке страницы
 
-  const savedItems = localStorage.getItem("items");
-  if (savedItems) {
-    items = JSON.parse(savedItems);
-  }
+const savedItems = localStorage.getItem("items");
+if (savedItems) {
+items = JSON.parse(savedItems);
+tg.MainButton.show();
+}
 
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
