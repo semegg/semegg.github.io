@@ -12,7 +12,7 @@ let btn_esprss = document.getElementById("btn_esprss");
 let btn_dpp = document.getElementById("btn_dpp");
 let btn_ltt = document.getElementById("btn_ltt");
 
-btn_amrcn.addEvenLister("click", function() {
+btn_amrcn.addEventListener("click", function() {
     if (tg.MainButton.isVisible) {
     tg.MainButton.hide();
     }
@@ -23,7 +23,7 @@ btn_amrcn.addEvenLister("click", function() {
     tg.MainButton.show;}
 });
 
-btn_esprss.addEvenLister("click", function() {
+btn_esprss.addEventListener("click", function() {
     if (tg.MainButton.isVisible) {
     tg.MainButton.hide();
     }
@@ -33,7 +33,7 @@ btn_esprss.addEvenLister("click", function() {
     tg.MainButton.show();}
 });
 
-btn_dpp.addEvenLister("click", function() {
+btn_dpp.addEventListener("click", function() {
     if (tg.MainButton.isVisible) {
     tg.MainButton.hide();
     }
@@ -44,7 +44,7 @@ btn_dpp.addEvenLister("click", function() {
     tg.MainButton.show();}
 });
 
-btn_ltt.addEvenLister("click", function() {
+btn_ltt.addEventListener("click", function() {
     if (tg.MainButton.isVisible) {
     tg.MainButton.hide();
     }
