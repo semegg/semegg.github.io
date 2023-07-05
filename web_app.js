@@ -18,9 +18,10 @@ btn_amrcn.addEventListener("click", function() {
     }
     else {
     items = "amrcn";
-    tg.MainButton.setText("Вы выбрали " items "товаров!")};
+    tg.MainButton.setText("Вы выбрали " items "товаров!");
 
-    tg.MainButton.show;}
+    tg.MainButton.show();
+    }
 });
 
 btn_esprss.addEventListener("click", function() {
@@ -29,8 +30,9 @@ btn_esprss.addEventListener("click", function() {
     }
     else {
     items = "amrcn";
-    tg.MainButton.setText("Вы выбрали " items "товаров!")};
-    tg.MainButton.show();}
+    tg.MainButton.setText("Вы выбрали " items "товаров!");
+    tg.MainButton.show();
+    }
 });
 
 btn_dpp.addEventListener("click", function() {
@@ -39,9 +41,9 @@ btn_dpp.addEventListener("click", function() {
     }
     else {
     items = "amrcn";
-    tg.MainButton.setText("Вы выбрали " items "товаров!")};
-
-    tg.MainButton.show();}
+    tg.MainButton.setText("Вы выбрали товаров!");
+    tg.MainButton.show();
+    }
 });
 
 btn_ltt.addEventListener("click", function() {
@@ -50,9 +52,9 @@ btn_ltt.addEventListener("click", function() {
     }
     else {
     items = "amrcn";
-    tg.MainButton.setText("Вы выбрали " items "товаров!")};
-
-    tg.MainButton.show();}
+    tg.MainButton.setText("Вы выбрали " items "товаров!");
+    tg.MainButton.show();
+    }
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
