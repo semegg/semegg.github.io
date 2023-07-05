@@ -6,12 +6,12 @@ tg.MainButton.color = "#2cab37";
 let items = [];
 
 // Восстановление значения items при загрузке страницы
-if (window.location.pathname === "/") {
+
   const savedItems = localStorage.getItem("items");
   if (savedItems) {
     items = JSON.parse(savedItems);
   }
-}
+
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
 buttons.forEach(button => {
