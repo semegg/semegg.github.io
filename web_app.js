@@ -10,6 +10,8 @@ let items = [];
 const savedItems = localStorage.getItem("items");
 if (savedItems) {
 items = JSON.parse(savedItems);
+if (window.location.pathname === "/index.html"){
+tg.MainButton.setText("Continue")}
 tg.MainButton.show();
 }
 
