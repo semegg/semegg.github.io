@@ -11,13 +11,14 @@ if (savedItems) {
   items = JSON.parse(savedItems);
   if (window.location.pathname === "/index.html") {
     tg.MainButton.setText("Continue");
+    tg.MainButton.show();
   }
   else {
       const count = items.length;
     tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
     tg.MainButton.show();
   }
-  tg.MainButton.show();
+
 
 }
 
@@ -32,9 +33,6 @@ buttons.forEach(button => {
   });
 });
 
-window.addEventListener("beforeunload", function() {
-  localStorage.removeItem("items");
-});
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
   if (window.location.pathname === "/menu.html") {
@@ -42,5 +40,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
     window.location.href = "/";
   } else if (window.location.pathname === "/index.html") {
     tg.sendData(items);
+    items = [];
   }
 });
