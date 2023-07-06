@@ -9,9 +9,8 @@ let items = [];
 const savedItems = localStorage.getItem("items");
 if (savedItems) {
   items = JSON.parse(savedItems);
-  if (window.location.pathname === "/index.html") {
+  if (window.location.pathname === "/") {
     tg.MainButton.setText("Continue");
-
   }
   else {
     const count = items.length;
