@@ -41,5 +41,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
   } else if (window.location.pathname === "/") {
     tg.sendData(items);
     items = [];
+    localStorage.setItem("items", JSON.stringify(items));
   }
 });
