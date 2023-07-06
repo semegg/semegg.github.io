@@ -11,14 +11,14 @@ if (savedItems) {
   items = JSON.parse(savedItems);
   if (window.location.pathname === "/index.html") {
     tg.MainButton.setText("Continue");
-    tg.MainButton.show();
+
   }
   else {
-      const count = items.length;
+    const count = items.length;
     tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
-    tg.MainButton.show();
-  }
 
+  }
+    tg.MainButton.show();
 
 }
 
