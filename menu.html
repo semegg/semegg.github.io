@@ -13,21 +13,34 @@
     <div class="container">
         <div class="inner">
             <div class="lin">
-                <div class="item">
-                    <img src="coffee_pics/amrcn.png" alt="" class="img">
-                    <p class="usercard"><strong> Americano * 50</strong></p>
-                    <button class="btn" id="btn_amrcn">
-                        ADD
-                    </button>
+                <div class="item" id="amrcn">
+                    <div class="counter">0</div>
+                    <img src="static/coffee_pics/amrcn.png" alt="" class="img">
+                    <p class="usercard">amrcn • <strong>30₴</strong></p>
+                <div class="table">
+                    <div class="row">
+                        <div class="btn cell minus" id="remove_amrcn">-</div>
+                        <div class="cell"></div>
+                        <div class="btn cell plus" id="btn_amrcn">+</div>
+                    </div>
                 </div>
+                <button class="btn add" id="btn_amrcn">ADD</button>
                 </div>
+                
+
                 <div class="lin">
-                    <div class="item">
-                        <img src="coffee_pics/dpp.png" alt="" class="img">
-                        <p class="usercard"><strong>Doppio * 30</strong></p>
-                        <button class="btn" id="btn_dpp">
-                            ADD
-                        </button>
+                    <div class="item" id="dpp">
+                        <div class="counter">0</div>
+                        <img src="static/coffee_pics/dpp.png" alt="" class="img">
+                        <p class="usercard">dpp • <strong>30₴</strong></p>
+                    <div class="table">
+                        <div class="row">
+                            <div class="btn cell minus" id="remove_dpp">-</div>
+                            <div class="cell"></div>
+                            <div class="btn cell plus" id="btn_dpp">+</div>
+                        </div>
+                    </div>
+                    <button class="btn add" id="btn_dpp">ADD</button>
                     </div>
                 </div>
             </div>
