@@ -1,6 +1,35 @@
-const items = document.body.getElementsByClassName("item");
+let tg = window.Telegram.WebApp;
+tg.expand();
+tg.MainButton.textColor = "#FFFFFF";
+tg.MainButton.color = "#2cab37";
 
-for (let item of Array.from(items)) {
+let items = [];
+
+const savedItems = localStorage.getItem("items");
+if (savedItems) {
+  items = JSON.parse(savedItems);
+  if (window.location.pathname === "/") {
+    tg.MainButton.setText("Continue");
+  } else {
+    const count = items.length;
+    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+  }
+  tg.MainButton.show();
+}
+
+let buttons = document.querySelectorAll('[id^="btn_"]');
+buttons.forEach(button => {
+  button.addEventListener("click", function() {
+    const buttonId = button.id.slice(4);
+    items.push(buttonId);
+    const count = items.length;
+    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+    tg.MainButton.show();
+  });
+});
+
+const itemsElements = document.body.getElementsByClassName("item");
+for (let item of Array.from(itemsElements)) {
   const counter = item.getElementsByClassName("counter")[0];
   counter.style.setProperty("visibility", "hidden");
 
@@ -29,7 +58,7 @@ for (let item of Array.from(items)) {
 
 const increment = (item) => {
   const counter = item.getElementsByClassName("counter")[0];
-  let value = Number(counter.textContent);  
+  let value = Number(counter.textContent);
 
   if (!value) {
     counter.style.setProperty("visibility", "visible");
@@ -56,3 +85,14 @@ const decrement = (item) => {
   counter.textContent = value;
   localStorage.setItem(`counter_${item.id}`, value);
 };
+
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+  if (window.location.pathname === "/menu.html") {
+    localStorage.setItem("items", JSON.stringify(items));
+    window.location.href = "/";
+  } else if (window.location.pathname === "/") {
+    tg.sendData(savedItems);
+    localStorage.clear();
+    window.close();
+  }
+});
