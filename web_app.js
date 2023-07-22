@@ -77,11 +77,14 @@
     let remove_buttons = document.querySelectorAll('[id^="remove_"]');
     buttons.forEach((button) => {
       button.addEventListener("click", function () {
-        const buttonId = button.id.slice(4);
-        items.ppop(buttonId);
+        const buttonId = button.id.slice(7);
+        items.pop(buttonId);
         const count = items.length;
+        if (count === 0) {
+          tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
+        } else {
         tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
-        tg.MainButton.show();
+        tg.MainButton.show(); }
       });
     });
 
