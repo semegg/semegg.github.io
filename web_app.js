@@ -80,7 +80,7 @@
         const buttonId = button.id.slice(7);
         items.pop(buttonId);
         const count = items.length;
-        if (count === 0) {
+        if (count < 1) {
           tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
         } else {
         tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
