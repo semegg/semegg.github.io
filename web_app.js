@@ -84,7 +84,7 @@
           tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
         } else {
         tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
-        tg.MainButton.show(); }
+        tg.MainButton.show(); };
       });
     });
 
