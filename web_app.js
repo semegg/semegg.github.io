@@ -1,6 +1,6 @@
-const item = document.body.getElementsByClassName("item");
+const items_button = document.body.getElementsByClassName("item");
 
-for (let item of Array.from(items)) {
+for (let item of Array.from(items_button)) {
   const counter = item.getElementsByClassName("counter")[0];
   counter.style.setProperty("visibility", "hidden");
 
