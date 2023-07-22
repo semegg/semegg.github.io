@@ -74,18 +74,6 @@
       });
     });
 
-    let remove_buttons = document.querySelectorAll('[id^="remove_"]');
-    buttons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const buttonId = button.id.slice(7);
-        items.pop(buttonId);
-        const count = items.length;
-        tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
-        tg.MainButton.show(); 
-      });
-    });
-
-
     Telegram.WebApp.onEvent("mainButtonClicked", function () {
       if (window.location.pathname === "/menu.html") {
         localStorage.setItem("items", JSON.stringify(items));
