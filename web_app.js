@@ -41,7 +41,7 @@ removeButtons.forEach(button => {
     const count = items.length;
     tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
     tg.MainButton.show();
-    localStorage.clear();
+    
 
     if (count === 0) {
       tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
@@ -112,7 +112,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
   if (window.location.pathname === "/menu.html") {
     localStorage.setItem("items", JSON.stringify(items));
     window.location.href = "/";
-  } else  {
+  } else if (window.location.pathname === "/") {
     localStorage.clear();
     tg.sendData(savedItems);
     window.close();
