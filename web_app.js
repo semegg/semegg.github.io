@@ -41,6 +41,7 @@ removeButtons.forEach(button => {
     const count = items.length;
     tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
     tg.MainButton.show();
+    localStorage.clear();
 
     if (count === 0) {
       tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
