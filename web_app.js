@@ -116,10 +116,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
   }
   else if (window.location.pathname === "/menu.html") {
     localStorage.setItem("items", JSON.stringify(items));
-
+    tg.sendData(savedItems);
     
     window.close();
     window.location.href = "/";
-    tg.sendData(savedItems);
+    
   }
 });
