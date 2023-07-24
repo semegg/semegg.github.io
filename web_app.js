@@ -28,6 +28,27 @@ buttons.forEach(button => {
   });
 });
 
+let removeButtons = document.querySelectorAll('[id^="remove_"]');
+removeButtons.forEach(button => {
+  button.addEventListener("click", function() {
+    const buttonId = button.id.slice(7); // Видаляємо префікс "remove_" з ідентифікатора
+    const index = items.indexOf(buttonId);
+
+    if (index !== -1) {
+      items.splice(index, 1); // Видаляємо елемент з масиву за індексом
+    }
+
+    const count = items.length;
+    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+    tg.MainButton.show();
+
+    if (count === 0) {
+      tg.MainButton.hide(); // Ховаємо кнопку, якщо масив порожній
+    }
+  });
+});
+
+
 const itemsElements = document.body.getElementsByClassName("item");
 for (let item of Array.from(itemsElements)) {
   const counter = item.getElementsByClassName("counter")[0];
