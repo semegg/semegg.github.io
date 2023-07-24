@@ -110,16 +110,12 @@ const decrement = (item) => {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
   if (window.location.pathname === "/") {
-    localStorage.clear();
     tg.sendData(savedItems);
+    localStorage.clear();
     window.close();
   }
   else if (window.location.pathname === "/menu.html") {
     localStorage.setItem("items", JSON.stringify(items));
-    tg.sendData(savedItems);
-    
-    window.close();
     window.location.href = "/";
-    
   }
 });
