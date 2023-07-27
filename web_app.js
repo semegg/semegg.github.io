@@ -17,18 +17,6 @@ if (savedItems) {
   tg.MainButton.show();
 }
 
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-  if (window.location.pathname === "/") {
-
-    window.close();
-    tg.sendData(savedItems);
-    localStorage.clear();
-    
-} else if (window.location.pathname === "/menu.html") {
-    localStorage.setItem("items", JSON.stringify(items));
-    window.location.href = "/";
-  }
-});
 
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
@@ -123,3 +111,14 @@ const decrement = (item) => {
 };
 
 
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+  if (window.location.pathname === "/menu.html") {
+    localStorage.setItem("items", JSON.stringify(items));
+    window.location.href = "/";
+  }
+ else  {
+  window.close();
+  tg.sendData(savedItems);
+  localStorage.clear();
+ } 
+});
