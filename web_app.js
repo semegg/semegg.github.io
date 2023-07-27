@@ -12,10 +12,24 @@ if (savedItems) {
     tg.MainButton.setText("Continue");
   } else {
     const count = items.length;
-    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+    tg.MainButton.setText(`Вы выбрали ${count} товаров 12!`);
   }
   tg.MainButton.show();
 }
+
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+  if (window.location.pathname === "/") {
+
+    window.close();
+    tg.sendData(savedItems);
+    localStorage.clear();
+    
+} else if (window.location.pathname === "/menu.html") {
+    localStorage.setItem("items", JSON.stringify(items));
+    window.location.href = "/";
+  }
+});
+
 
 let buttons = document.querySelectorAll('[id^="btn_"]');
 buttons.forEach(button => {
@@ -108,14 +122,4 @@ const decrement = (item) => {
   localStorage.setItem(`counter_${item.id}`, value);
 };
 
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-  if (window.location.pathname === "/") {
-    tg.sendData(savedItems);
-    localStorage.clear();
-    window.close();
-  }
-  else if (window.location.pathname === "/menu.html") {
-    localStorage.setItem("items", JSON.stringify(items));
-    window.location.href = "/";
-  }
-});
+
