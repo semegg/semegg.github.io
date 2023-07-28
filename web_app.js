@@ -37,7 +37,7 @@ buttons.forEach(button => {
     const buttonId = button.id.slice(4);
     items.push(buttonId);
     const count = items.length;
-    tg.MainButton.setText(`Вы выбрали ${count} товаров!`);
+    tg.MainButton.setText(`Вы выбрали ${count} товаров 12!`);
     tg.MainButton.show();
   });
 });
