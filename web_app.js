@@ -12,7 +12,7 @@ if (savedItems) {
     tg.MainButton.setText("Continue");
   } else {
     const count = items.length;
-    tg.MainButton.setText(`Вы выбрали ${count} товаров 12!`);
+    tg.MainButton.setText(`Вы выбрали ${count} товаров !`);
   }
   tg.MainButton.show();
 }
